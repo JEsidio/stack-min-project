@@ -10,6 +10,35 @@ import br.univille.estd.stacks.StackMin;
 public class StackMinTests {
 	
 	@Test
+	public void min() {
+		Stack<Integer> stack = new StackMin<Integer>();
+		stack.push(10);
+		assertEquals("Mínimo",10,(int)stack.min());
+	}
+	
+	@Test
+	public void min2() {
+		Stack<Integer> stack = new StackMin<Integer>();
+		stack.push(3);
+		stack.push(1);
+		stack.push(2);
+		stack.pop();
+		assertEquals("Mínimo",1,(int)stack.min());
+	}
+	
+	@Test
+	public void min3() {
+		Stack<Integer> stack = new StackMin<Integer>();
+		stack.push(3);
+		stack.push(2);
+		stack.push(1);
+		stack.push(4);
+		stack.pop();
+		stack.pop();
+		assertEquals("Mínimo",2,(int)stack.min());
+	}
+	
+	@Test
 	public void isEmpty() {
 		Stack<Integer> stack = new StackMin<Integer>();
 		assertEquals("A pilha deve estar vazia",true,stack.isEmpty());
@@ -50,7 +79,7 @@ public class StackMinTests {
 		Stack<Integer> stack = new StackMin<Integer>();
 		try {
 			stack.pop();
-			fail("Pilha deve gerar exceçao EmptyStackException");
+			fail("Pilha deve gerar exceÃ§ao EmptyStackException");
 		}catch(Exception ignored) {
 		}
 	}
@@ -60,7 +89,7 @@ public class StackMinTests {
 		Stack<Integer> stack = new StackMin<Integer>();
 		try {
 			stack.top();
-			fail("Pilha deve gerar exceçao EmptyStackException");
+			fail("Pilha deve gerar exceÃ§ao EmptyStackException");
 		}catch(Exception ignored) {
 		}
 	}
